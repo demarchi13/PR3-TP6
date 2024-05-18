@@ -28,23 +28,28 @@ namespace TP6_GRUPO_NRO_10
 
         protected void grdProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            //Configura la paginacion del formulario
             grdProductos.PageIndex = e.NewPageIndex;
             cargarGrillaProductos();
         }
 
         protected void grdProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {       
+            //Configurar el boton eleiminar de la grilla
             try
             {
+                //Obtener el id producto
                 string idProducto = ((Label)grdProductos.Rows[e.RowIndex].FindControl("lbl_it_IdProducto")).Text;                     
-            
+                
+                //guardar el id en un objeto
                 Producto objProducto = new Producto();
                 objProducto.IdProducto = Convert.ToInt32(idProducto);
 
+                //Declara el objeto tipo GestionProductos y llama al metodo que recibe un obj tipo Producto
                 GestionProductos objGestionProducto = new GestionProductos();
-
                 lblIdProducto.Text = "Id producto seleccionado y eliminado: " + objProducto.IdProducto.ToString();
                 objGestionProducto.EliminarProducto(objProducto);
+                //Recarga la grilla para que se muestren los cambios
                 cargarGrillaProductos();
             }
             catch (Exception ex)
@@ -55,18 +60,21 @@ namespace TP6_GRUPO_NRO_10
 
         protected void grdProductos_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            //Configura el boton editar de la grilla
             grdProductos.EditIndex = e.NewEditIndex;
             cargarGrillaProductos();
         }
 
         protected void grdProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
+            //Configura el boton cancelar del boton editar
             grdProductos.EditIndex = -1;
             cargarGrillaProductos();
         }
 
         protected void grdProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            //Configurar el boton actualizar del boton editar
             try
             {
                 //Buscar y obtener los datos del edit item template
