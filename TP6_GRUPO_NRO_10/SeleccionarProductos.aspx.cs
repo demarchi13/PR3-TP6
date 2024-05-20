@@ -10,7 +10,7 @@ namespace TP6_GRUPO_NRO_10
 {
     public partial class SeleccionarProductos : System.Web.UI.Page
     {
-       
+        //
         //Declaramos el obj de la clase GestionProductos para llamar a los metodos
         GestionProductos objGP = new GestionProductos();
         protected void Page_Load(object sender, EventArgs e)
