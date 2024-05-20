@@ -33,6 +33,15 @@ namespace TP6_GRUPO_NRO_10
         protected global::System.Web.UI.WebControls.GridView grdProductos;
 
         /// <summary>
+        /// Control hypVolverInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hypVolverInicio;
+
+        /// <summary>
         /// Control lblIdProducto.
         /// </summary>
         /// <remarks>

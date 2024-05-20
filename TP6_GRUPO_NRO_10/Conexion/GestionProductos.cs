@@ -14,16 +14,13 @@ namespace TP6_GRUPO_NRO_10
 
         private DataTable ObtenerTabla(String NombreTabla, String consultaSQL)
         {
-            DataSet data_set = new DataSet();
-
+            
             AccesoDatos datos = new AccesoDatos();
             datos.setearConsulta(consultaSQL);
             datos.ejecutarLectura();
 
             DataTable tabla = new DataTable(NombreTabla);
             tabla.Load(datos.Lector);
-
-            data_set.Tables.Add(tabla);
 
             datos.cerrarConexion();
 

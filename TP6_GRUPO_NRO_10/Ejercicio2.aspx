@@ -12,6 +12,7 @@
         }
         .auto-style3 {
             width: 46px;
+            font-size: x-large;
         }
         .auto-style4 {
             width: 46px;
@@ -19,6 +20,36 @@
         }
         .auto-style5 {
             height: 26px;
+        }
+        .auto-style6 {
+            width: 46px;
+            height: 25px;
+        }
+        .auto-style7 {
+            height: 25px;
+        }
+        .auto-style8 {
+            width: 269px;
+        }
+        .auto-style9 {
+            height: 25px;
+            width: 269px;
+        }
+        .auto-style11 {
+            height: 26px;
+            width: 269px;
+        }
+        .auto-style12 {
+            width: 46px;
+            height: 24px;
+        }
+        .auto-style13 {
+            height: 24px;
+            width: 269px;
+        }
+        .auto-style14 {
+            height: 24px;
+            text-align: left;
         }
     </style>
 </head>
@@ -28,27 +59,27 @@
 
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style3">Inicio</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style3"><strong>Inicio</strong></td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style5">
+                    <td class="auto-style6"></td>
+                    <td class="auto-style9">
                         <asp:HyperLink ID="hypSeleccionarProd" runat="server" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar Productos</asp:HyperLink>
                     </td>
-                    <td class="auto-style5"></td>
+                    <td class="auto-style7"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">
-                        <asp:LinkButton ID="lnkEliminar" runat="server">Eliminar productos seleccionados</asp:LinkButton>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style13">
+                        <asp:LinkButton ID="lnkEliminar" runat="server" OnClick="lnkEliminar_Click">Eliminar productos seleccionados</asp:LinkButton>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                 </tr>
                 <tr>
                     <td class="auto-style4"></td>
-                    <td class="auto-style5">
+                    <td class="auto-style11">
                         <asp:HyperLink ID="hypMostrarProd" runat="server" NavigateUrl="~/MostrarProductos.aspx">Mostrar Productos</asp:HyperLink>
                     </td>
                     <td class="auto-style5"></td>

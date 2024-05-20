@@ -11,31 +11,27 @@ namespace TP6_GRUPO_NRO_10
 {
     public partial class Ejercicio1 : System.Web.UI.Page
     {
+        //Declaramos el obj de la clase GestionProductos para llamar a los metodos
+        GestionProductos objGP = new GestionProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {                       
-                cargarGrillaProductos();
+            {
+               
+                objGP.cargarGrillaProductos(grdProductos);
             }
-        }
-
-        public void cargarGrillaProductos()
-        {
-            GestionProductos objGP = new GestionProductos();
-            grdProductos.DataSource = objGP.ObtenerTodosLosProductos();
-            grdProductos.DataBind();
         }
 
         protected void grdProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             //Configura la paginacion del formulario
             grdProductos.PageIndex = e.NewPageIndex;
-            cargarGrillaProductos();
+            objGP.cargarGrillaProductos(grdProductos);
         }
 
         protected void grdProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {       
-            //Configurar el boton eleiminar de la grilla
+            //Configurar el boton eliminar de la grilla
             try
             {
                 //Obtener el id producto
@@ -49,27 +45,31 @@ namespace TP6_GRUPO_NRO_10
                 GestionProductos objGestionProducto = new GestionProductos();
                 lblIdProducto.Text = "Id producto seleccionado y eliminado: " + objProducto.IdProducto.ToString();
                 objGestionProducto.EliminarProducto(objProducto);
+                
                 //Recarga la grilla para que se muestren los cambios
-                cargarGrillaProductos();
+                 objGP.cargarGrillaProductos(grdProductos);
+                
             }
             catch (Exception ex)
             {
                 lblEx.Text = ex.Message;             
-            }
+            }         
         }
 
         protected void grdProductos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             //Configura el boton editar de la grilla
             grdProductos.EditIndex = e.NewEditIndex;
-            cargarGrillaProductos();
+            //cargarGrillaProductos();
+            objGP.cargarGrillaProductos(grdProductos);
         }
 
         protected void grdProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             //Configura el boton cancelar del boton editar
             grdProductos.EditIndex = -1;
-            cargarGrillaProductos();
+            //cargarGrillaProductos();
+            objGP.cargarGrillaProductos(grdProductos);
         }
 
         protected void grdProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -105,7 +105,8 @@ namespace TP6_GRUPO_NRO_10
                 grdProductos.EditIndex = -1;
 
                 //Actualiza la grilla
-                cargarGrillaProductos();
+                objGP.cargarGrillaProductos(grdProductos);
+                lblEx.Text = "";
             }
             catch (Exception ex)
             {

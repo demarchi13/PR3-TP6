@@ -10,6 +10,9 @@
         .auto-style1 {
             font-size: xx-large;
         }
+        #hypVolverInicio{
+            margin-left: 500px;
+        }
     </style>
 </head>
 <body>
@@ -72,6 +75,7 @@
         <div>
 
             <br />
+            <asp:HyperLink ID="hypVolverInicio" runat="server" NavigateUrl="~/Inicio.aspx">Volver a Inicio</asp:HyperLink>
             <br />
             <asp:Label ID="lblIdProducto" runat="server"></asp:Label>
             <br />

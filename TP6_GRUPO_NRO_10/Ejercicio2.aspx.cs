@@ -13,5 +13,10 @@ namespace TP6_GRUPO_NRO_10
         {
 
         }
+
+        protected void lnkEliminar_Click(object sender, EventArgs e)
+        {
+            Session["Tabla"] = null;             
+        }
     }
 }

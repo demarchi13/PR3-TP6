@@ -15,7 +15,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <strong><span class="auto-style1">Grupo Nº 10</span></strong><br />
+            &nbsp;<strong><span class="auto-style1">Grupo Nº 10</span></strong><br />
             <br />
             <br />
             <br />

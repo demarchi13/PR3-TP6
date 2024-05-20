@@ -6,6 +6,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style>
+        #hypVolverInicio{
+            margin-left: 500px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -49,6 +54,7 @@
         <div>
             <br />
             <asp:Label ID="lblProdSeleccionado" runat="server"></asp:Label>
+            <asp:HyperLink ID="hypVolverInicio" runat="server" NavigateUrl="~/Inicio.aspx">Volver a Inicio</asp:HyperLink>
         </div>
     </form>
 </body>
