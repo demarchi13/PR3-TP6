@@ -11,6 +11,7 @@ namespace TP6_GRUPO_NRO_10
 {
     public partial class Ejercicio1 : System.Web.UI.Page
     {
+        //6. Declarar el objeto de la clase gestionproducto y colocar el codigo del pageload
         //Declaramos el obj de la clase GestionProductos para llamar a los metodos
         GestionProductos objGP = new GestionProductos();
         protected void Page_Load(object sender, EventArgs e)
@@ -21,7 +22,8 @@ namespace TP6_GRUPO_NRO_10
                 objGP.cargarGrillaProductos(grdProductos);
             }
         }
-
+        
+        //7. Configurar el event de la paginacion
         protected void grdProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             //Configura la paginacion del formulario
@@ -29,6 +31,7 @@ namespace TP6_GRUPO_NRO_10
             objGP.cargarGrillaProductos(grdProductos);
         }
 
+        //8. Configurar el boton ELIMINAR
         protected void grdProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {       
             //Configurar el boton eliminar de la grilla
@@ -56,6 +59,7 @@ namespace TP6_GRUPO_NRO_10
             }         
         }
 
+        //9. Configurar el boton EDITAR
         protected void grdProductos_RowEditing(object sender, GridViewEditEventArgs e)
         {
             //Configura el boton editar de la grilla
@@ -64,6 +68,7 @@ namespace TP6_GRUPO_NRO_10
             objGP.cargarGrillaProductos(grdProductos);
         }
 
+        //10. Configurar el boton CANCELAR
         protected void grdProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             //Configura el boton cancelar del boton editar
@@ -72,6 +77,7 @@ namespace TP6_GRUPO_NRO_10
             objGP.cargarGrillaProductos(grdProductos);
         }
 
+        //11. Configurar el boton ACTUALIZAR
         protected void grdProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             //Configurar el boton actualizar del boton editar
